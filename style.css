@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   margin: auto;
-  width: 380px;
-  height: 380px;
+  width: 350px;
+  height: 350px;
   position: absolute;
   z-index: 10;
   text-align: center;
@@ -64,7 +64,7 @@
   display: flex;
   justify-content: flex-start; 
     animation-name: rainbow-border; /* 启用动画 */
-    animation-duration: 5s; /* 持续时间 */
+    animation-duration: 10s; /* 持续时间 */
     animation-timing-function: linear; /* 时间函数 */
     animation-iteration-count: infinite; /* 循环次数（无限） */
 }
