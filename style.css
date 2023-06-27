@@ -4,8 +4,8 @@
   left: 0;
   right: 0;
   margin: auto;
-  width: 490px;
-  height: 470px;
+  width: 400px;
+  height: 400px;
   position: absolute;
   z-index: 10;
   text-align: center;
@@ -28,7 +28,6 @@
       background-position: 0% 50%;
     }
   }
-  
   
   .button {
         display: inline-block;
@@ -60,13 +59,47 @@
 /* 设置选项卡样式 */
 .tab {
   overflow: hidden;
-  border: 8px solid #ccc;
-  background-color: #f4f4f4;
+  border: 8px solid;
+  border-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523)2 2 2 2;
+  display: flex;
+  justify-content: flex-start; 
+    animation-name: rainbow-border; /* 启用动画 */
+    animation-duration: 5s; /* 持续时间 */
+    animation-timing-function: linear; /* 时间函数 */
+    animation-iteration-count: infinite; /* 循环次数（无限） */
+}
+
+@keyframes rainbow-border {
+  0% { /* 初始状态 */
+    border-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523) 2 2 2 2;
+  }
+
+  20% {
+    border-image: linear-gradient(-45deg, #e73c7e, #23a6d5, #23d5ab, #29d523, #ee7752) 2 2 2 2;
+  }
+
+  40% {
+    border-image: linear-gradient(-45deg, #23a6d5, #23d5ab, #29d523, #ee7752, #e73c7e) 2 2 2 2;
+  }
+
+  60% {
+    border-image: linear-gradient(-45deg, #23d5ab, #29d523, #ee7752, #e73c7e, #23a6d5) 2 2 2 2;
+  }
+
+  80% {
+    border-image: linear-gradient(-45deg, #29d523, #ee7752, #e73c7e, #23a6d5, #23d5ab) 2 2 2 2;
+  }
+
+  100% { /* 终止状态 */
+    border-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523) 2 2 2 2;
+  }
 }
 
 /* 设置选项卡内按钮的样式 */
 .tab button {
-  background-color: inherit;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
   float: left;
   border: none;
   outline: none;
@@ -78,12 +111,17 @@
 
 /* 更改按钮的背景颜色r */
 .tab button:hover {
-  background-color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  
 }
 
 /* 创建活动/当前选项卡链接类 */
 .tab button.active {
-  background-color: #ccc;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #29d523);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 /* 设置选项卡内容的样式 */
@@ -92,4 +130,16 @@
   padding: 12px 15px;
   border: 0px solid #ccc;
   border-top: none;
+  
+   overflow-y: auto;
+    max-height: 300px;
+}
+
+/* 标签的左右滑动 */
+.tablinks {
+	width: 100px;
+}
+
+.tab button:focus {
+	outline: none;
 }
